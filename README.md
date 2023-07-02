@@ -67,15 +67,17 @@ https://cloud.google.com/logging/docs/setup/nodejs
 import bunyan from 'bunyan';
 import lb from '@google-cloud/logging-bunyan';
 
-const app = express();
-const loggingBunyan = new lb.LoggingBunyan();
-const logger = bunyan.createLogger({
+const isProduction = process.env.NODE_ENV === 'production';
+
+let logOption = {
     name: 'nhanc18-log',
     streams: [
-        {stream: process.stdout, level: 'info'},
-        loggingBunyan.stream('info'),
-    ],
-});
+        { stream: process.stdout, level: 'info' }
+    ]
+};
+if (isProduction) {
+    logOption.streams.push(new lb.LoggingBunyan().stream('info'));
+}
 
 logger.info('nhanc18-log: Hello, world!');
 ```
