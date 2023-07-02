@@ -62,6 +62,8 @@ service google-fluentd restart
 ```
 ## 2. Cài Bunyan:
 https://cloud.google.com/logging/docs/setup/nodejs
+
+`npm install --save bunyan @google-cloud/logging-bunyan`
 ## 3. Script:
 ```
 import bunyan from 'bunyan';
