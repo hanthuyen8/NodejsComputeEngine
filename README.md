@@ -14,9 +14,9 @@
 ## 4. Cài đặt Firewall: 
 Tạo bằng UI: Menu -> VPC network -> Firewall -> Create Firewall rule
 - Name: default-allow-http-6868 (name j cũng được)
-- Protocols and ports: Tcp: 6868 (port khai báo trong code của project)
-- Source filters: IP ranges: 0.0.0.0/0
-- Target tags: http-server
+- Protocols and ports: **Tcp: 6868** (port khai báo trong code của project)
+- Source filters: **IP ranges: 0.0.0.0/0**
+- Target tags: **http-server**
 
 ## 5. Test chạy server: 
 ```npm run start```
